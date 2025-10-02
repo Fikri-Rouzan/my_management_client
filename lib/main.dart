@@ -6,6 +6,7 @@ import 'package:my_management_client/core/session.dart';
 import 'package:my_management_client/presentation/pages/account_page.dart';
 import 'package:my_management_client/presentation/pages/agenda/add_agenda_page.dart';
 import 'package:my_management_client/presentation/pages/agenda/all_agenda_page.dart';
+import 'package:my_management_client/presentation/pages/agenda/detail_agenda_page.dart';
 import 'package:my_management_client/presentation/pages/dashboard_page.dart';
 import 'package:my_management_client/presentation/pages/login_page.dart';
 import 'package:my_management_client/presentation/pages/mood/choose_mood_page.dart';
@@ -62,6 +63,10 @@ class MainApp extends StatelessWidget {
         ChooseMoodPage.routeName: (context) => const ChooseMoodPage(),
         AllAgendaPage.routeName: (context) => const AllAgendaPage(),
         AddAgendaPage.routeName: (context) => const AddAgendaPage(),
+        DetailAgendaPage.routeName: (context) {
+          int agendaId = ModalRoute.settingsOf(context)?.arguments as int;
+          return DetailAgendaPage(agendaId: agendaId);
+        },
       },
     );
   }
