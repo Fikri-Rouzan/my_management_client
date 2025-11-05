@@ -7,6 +7,7 @@ import 'package:my_management_client/core/session.dart';
 import 'package:my_management_client/data/models/solution_model.dart';
 import 'package:my_management_client/presentation/controllers/solution_controller.dart';
 import 'package:my_management_client/presentation/pages/solution/add_solution_page.dart';
+import 'package:my_management_client/presentation/pages/solution/update_solution_page.dart';
 import 'package:my_management_client/presentation/widgets/response_failed.dart';
 
 class SolutionFragment extends StatefulWidget {
@@ -26,7 +27,13 @@ class _SolutionFragmentState extends State<SolutionFragment> {
 
   void gotoDetailSolution(int id) {}
 
-  void gotoUpdateSolution(SolutionModel solution) {}
+  void gotoUpdateSolution(SolutionModel solution) {
+    Navigator.pushNamed(
+      context,
+      UpdateSolutionPage.routeName,
+      arguments: solution,
+    );
+  }
 
   void search() {
     final query = searchController.text;

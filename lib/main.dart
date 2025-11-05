@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_management_client/common/app_color.dart';
 import 'package:my_management_client/core/session.dart';
+import 'package:my_management_client/data/models/solution_model.dart';
 import 'package:my_management_client/presentation/pages/account_page.dart';
 import 'package:my_management_client/presentation/pages/agenda/add_agenda_page.dart';
 import 'package:my_management_client/presentation/pages/agenda/all_agenda_page.dart';
@@ -12,6 +13,7 @@ import 'package:my_management_client/presentation/pages/login_page.dart';
 import 'package:my_management_client/presentation/pages/mood/choose_mood_page.dart';
 import 'package:my_management_client/presentation/pages/register_page.dart';
 import 'package:my_management_client/presentation/pages/solution/add_solution_page.dart';
+import 'package:my_management_client/presentation/pages/solution/update_solution_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,6 +71,11 @@ class MainApp extends StatelessWidget {
           return DetailAgendaPage(agendaId: agendaId);
         },
         AddSolutionPage.routeName: (context) => const AddSolutionPage(),
+        UpdateSolutionPage.routeName: (context) {
+          SolutionModel solution =
+              ModalRoute.settingsOf(context)?.arguments as SolutionModel;
+          return UpdateSolutionPage(solution: solution);
+        },
       },
     );
   }
