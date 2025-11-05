@@ -11,6 +11,7 @@ import 'package:my_management_client/presentation/pages/dashboard_page.dart';
 import 'package:my_management_client/presentation/pages/login_page.dart';
 import 'package:my_management_client/presentation/pages/mood/choose_mood_page.dart';
 import 'package:my_management_client/presentation/pages/register_page.dart';
+import 'package:my_management_client/presentation/pages/solution/add_solution_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -67,6 +68,7 @@ class MainApp extends StatelessWidget {
           int agendaId = ModalRoute.settingsOf(context)?.arguments as int;
           return DetailAgendaPage(agendaId: agendaId);
         },
+        AddSolutionPage.routeName: (context) => const AddSolutionPage(),
       },
     );
   }

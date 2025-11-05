@@ -6,6 +6,7 @@ import 'package:my_management_client/common/enums.dart';
 import 'package:my_management_client/core/session.dart';
 import 'package:my_management_client/data/models/solution_model.dart';
 import 'package:my_management_client/presentation/controllers/solution_controller.dart';
+import 'package:my_management_client/presentation/pages/solution/add_solution_page.dart';
 import 'package:my_management_client/presentation/widgets/response_failed.dart';
 
 class SolutionFragment extends StatefulWidget {
@@ -19,7 +20,9 @@ class _SolutionFragmentState extends State<SolutionFragment> {
   final solutionController = Get.put(SolutionController());
   final searchController = TextEditingController();
 
-  void gotoAddSolution() {}
+  void gotoAddSolution() {
+    Navigator.pushNamed(context, AddSolutionPage.routeName);
+  }
 
   void gotoDetailSolution(int id) {}
 
