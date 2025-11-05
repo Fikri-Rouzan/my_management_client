@@ -13,6 +13,7 @@ import 'package:my_management_client/presentation/pages/login_page.dart';
 import 'package:my_management_client/presentation/pages/mood/choose_mood_page.dart';
 import 'package:my_management_client/presentation/pages/register_page.dart';
 import 'package:my_management_client/presentation/pages/solution/add_solution_page.dart';
+import 'package:my_management_client/presentation/pages/solution/detail_solution_page.dart';
 import 'package:my_management_client/presentation/pages/solution/update_solution_page.dart';
 
 Future<void> main() async {
@@ -75,6 +76,10 @@ class MainApp extends StatelessWidget {
           SolutionModel solution =
               ModalRoute.settingsOf(context)?.arguments as SolutionModel;
           return UpdateSolutionPage(solution: solution);
+        },
+        DetailSolutionPage.routeName: (context) {
+          int solutionId = ModalRoute.settingsOf(context)?.arguments as int;
+          return DetailSolutionPage(solutionId: solutionId);
         },
       },
     );

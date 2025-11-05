@@ -7,6 +7,7 @@ import 'package:my_management_client/core/session.dart';
 import 'package:my_management_client/data/models/solution_model.dart';
 import 'package:my_management_client/presentation/controllers/solution_controller.dart';
 import 'package:my_management_client/presentation/pages/solution/add_solution_page.dart';
+import 'package:my_management_client/presentation/pages/solution/detail_solution_page.dart';
 import 'package:my_management_client/presentation/pages/solution/update_solution_page.dart';
 import 'package:my_management_client/presentation/widgets/response_failed.dart';
 
@@ -25,7 +26,9 @@ class _SolutionFragmentState extends State<SolutionFragment> {
     Navigator.pushNamed(context, AddSolutionPage.routeName);
   }
 
-  void gotoDetailSolution(int id) {}
+  void gotoDetailSolution(int id) {
+    Navigator.pushNamed(context, DetailSolutionPage.routeName, arguments: id);
+  }
 
   void gotoUpdateSolution(SolutionModel solution) {
     Navigator.pushNamed(
