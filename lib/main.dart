@@ -8,6 +8,7 @@ import 'package:my_management_client/presentation/pages/account_page.dart';
 import 'package:my_management_client/presentation/pages/agenda/add_agenda_page.dart';
 import 'package:my_management_client/presentation/pages/agenda/all_agenda_page.dart';
 import 'package:my_management_client/presentation/pages/agenda/detail_agenda_page.dart';
+import 'package:my_management_client/presentation/pages/chat_ai_page.dart';
 import 'package:my_management_client/presentation/pages/dashboard_page.dart';
 import 'package:my_management_client/presentation/pages/login_page.dart';
 import 'package:my_management_client/presentation/pages/mood/choose_mood_page.dart';
@@ -81,6 +82,7 @@ class MainApp extends StatelessWidget {
           int solutionId = ModalRoute.settingsOf(context)?.arguments as int;
           return DetailSolutionPage(solutionId: solutionId);
         },
+        ChatAIPage.routeName: (context) => const ChatAIPage(),
       },
     );
   }

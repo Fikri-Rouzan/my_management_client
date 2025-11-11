@@ -13,6 +13,7 @@ import 'package:my_management_client/presentation/controllers/home/mood_today_co
 import 'package:my_management_client/presentation/pages/account_page.dart';
 import 'package:my_management_client/presentation/pages/agenda/all_agenda_page.dart';
 import 'package:my_management_client/presentation/pages/agenda/detail_agenda_page.dart';
+import 'package:my_management_client/presentation/pages/chat_ai_page.dart';
 import 'package:my_management_client/presentation/pages/mood/choose_mood_page.dart';
 import 'package:my_management_client/presentation/widgets/response_failed.dart';
 
@@ -44,7 +45,9 @@ class _HomeFragmentState extends State<HomeFragment> {
     });
   }
 
-  void gotoChatAI() {}
+  void gotoChatAI() {
+    Navigator.pushNamed(context, ChatAIPage.routeName);
+  }
 
   void gotoAccount() {
     Navigator.pushNamed(context, AccountPage.routeName);
