@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:my_management_client/common/logging.dart';
 import 'package:my_management_client/core/api.dart';
 import 'package:http/http.dart' as http;
